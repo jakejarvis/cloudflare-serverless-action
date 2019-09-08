@@ -9,8 +9,8 @@ provider:
 
 plugins:
   - serverless-cloudflare-workers
-  
+
 functions:
   worker-deploy:
-    name: ${env:CLOUDFLARE_SCRIPT_NAME}
-    script: ${env:CLOUDFLARE_SCRIPT_NAME} 
+    name: ${env:CLOUDFLARE_WORKER_NAME}
+    script: ${env:CLOUDFLARE_SCRIPT_NAME}
