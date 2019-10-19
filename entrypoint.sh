@@ -1,13 +1,14 @@
 #!/bin/bash
 
-ACTION_WORKSPACE=/root/worker-deploy
+#ACTION_WORKSPACE=/worker-deploy
 
 if [ -e $GITHUB_WORKSPACE/serverless.yml ]
 then
-    echo 'Custom serverless.yml found.'
-    mv $GITHUB_WORKSPACE/serverless.yml $ACTION_WORKSPACE
+    echo 'Custom serverless.yml found. Replacing default config.'
+    rm $ACTION_WORKSPACE/serverless.yml
+    cp $GITHUB_WORKSPACE/serverless.yml $ACTION_WORKSPACE
 fi
 
-mv $GITHUB_WORKSPACE/*.js $ACTION_WORKSPACE
+cp $GITHUB_WORKSPACE/*.js $ACTION_WORKSPACE
 
 cd $ACTION_WORKSPACE && sls deploy

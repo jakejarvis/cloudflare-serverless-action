@@ -1,8 +1,8 @@
 service:
-    name: deploy-worker-github-action
-    config:
-      accountId: ${env:CLOUDFLARE_ACCOUNT_ID}
-      zoneId: ${env:CLOUDFLARE_ZONE_ID}
+  name: deploy-worker-github-action
+  config:
+    accountId: ${env:CLOUDFLARE_ACCOUNT_ID}
+    zoneId: ${env:CLOUDFLARE_ZONE_ID}
 
 provider:
   name: cloudflare
